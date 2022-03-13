@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiKey: '8ad708f25a87fc727463a622639f13bf',
-  apiUrl: 'http://api.openweathermap.org/data/2.5'
+  apiUrl: 'https://api.openweathermap.org/data/2.5'
 };
 /*
  * For easier debugging in development mode, you can import the following file
