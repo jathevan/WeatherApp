@@ -1,0 +1,18 @@
+<mat-toolbar>
+  <span id='title'>Weather App</span>
+  <form #searchForm='ngForm' (ngSubmit)='search(searchForm)'>
+    <mat-form-field class="form-field">
+      <input #lo='ngModel' [(ngModel)]='loc' autocomplete="off" matInput name='lo' placeholder="Search Location"
+             required
+             type='text'>
+      <mat-error *ngIf="lo.invalid && (lo.dirty || lo.touched)">
+        <span *ngIf="lo.errors?.['required']">
+          Location is required.
+        </span>
+      </mat-error>
+    </mat-form-field>
+    <button mat-button type='submit'>
+      <mat-icon>search</mat-icon>
+    </button>
+  </form>
+</mat-toolbar>

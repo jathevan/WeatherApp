@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { WeatherComponent } from './weather/weather.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {HomePageComponent} from "./home-page/home-page.component";
+
 export const allAppRoutes: Routes = [
-  { path: '', component: WeatherComponent }
+  {path: '', component: HomePageComponent}
 ];
 const routes: Routes = [];
 
