@@ -41,8 +41,7 @@ export class CurrentWeatherComponent implements OnInit {
           return;
         }
         alert('Failed to get weather.');
-      }, () => {
-      })
+      });
   }
 
   resultFound() {

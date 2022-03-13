@@ -18,6 +18,7 @@ export class HomePageComponent implements OnInit {
     })
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
+
 }

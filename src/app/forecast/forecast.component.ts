@@ -26,16 +26,12 @@ export class ForecastComponent implements OnInit {
     })
   }
 
-  ngOnInit() {
-  }
-
   searchWeather(loc: string) {
     this.msg = '';
     this.currentWeather = {};
     this.weatherService.getCurrentWeather(loc)
       .subscribe(res => {
         this.currentWeather = res;
-      }, () => {
       }, () => {
         this.searchForecast(loc);
       })
@@ -45,11 +41,13 @@ export class ForecastComponent implements OnInit {
     this.weatherService.getForecast(loc)
       .subscribe(res => {
         this.forecast = res;
-      }, () => {
-      })
+      });
   }
 
   resultFound() {
     return Object.keys(this.currentWeather).length > 0;
+  }
+
+  ngOnInit(): void {
   }
 }
