@@ -1,7 +1,7 @@
 export const initialState = '';
 export const SET_LOCATION = 'SET_LOCATION';
 
-export function locationReducer(action: any, state = initialState) {
+export function locationReducer(state = initialState, action: any) {
   switch (action.type) {
     case SET_LOCATION:
       state = action.payload
