@@ -10,7 +10,6 @@ import {Observable} from 'rxjs';
 export class HomePageComponent implements OnInit {
   loc$: Observable<string>;
   loc: string;
-
   constructor(private store: Store<any>) {
     this.loc$ = store.pipe(select('loc'));
     this.loc$.subscribe(loc => {
@@ -18,7 +17,6 @@ export class HomePageComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
-
 }

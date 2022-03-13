@@ -14,14 +14,13 @@ export class TopBarComponent implements OnInit {
   constructor(private store: Store<any>) {
   }
 
+  ngOnInit() {
+  }
 
   search(searchForm: NgForm) {
     if (searchForm.invalid) {
       return;
     }
     this.store.dispatch({type: SET_LOCATION, payload: this.loc});
-  }
-
-  ngOnInit(): void {
   }
 }

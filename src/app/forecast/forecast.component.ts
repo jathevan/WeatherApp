@@ -26,28 +26,28 @@ export class ForecastComponent implements OnInit {
     })
   }
 
+  ngOnInit() {
+  }
+
   searchWeather(loc: string) {
     this.msg = '';
     this.currentWeather = {};
     this.weatherService.getCurrentWeather(loc)
       .subscribe(res => {
         this.currentWeather = res;
+      }, err => {
       }, () => {
         this.searchForecast(loc);
       })
   }
-
   searchForecast(loc: string) {
     this.weatherService.getForecast(loc)
       .subscribe(res => {
         this.forecast = res;
-      });
+      }, err => {
+      })
   }
-
   resultFound() {
     return Object.keys(this.currentWeather).length > 0;
-  }
-
-  ngOnInit(): void {
   }
 }

@@ -26,28 +26,30 @@ export class UvComponent implements OnInit {
     })
   }
 
+  ngOnInit() {
+  }
+
   searchWeather(loc: string) {
     this.msg = '';
     this.currentWeather = {};
     this.weatherService.getCurrentWeather(loc)
       .subscribe(res => {
         this.currentWeather = res;
+      }, err => {
       }, () => {
-        this.searchUv();
+        this.searchUv(loc);
       })
   }
 
-  searchUv() {
+  searchUv(loc: string) {
     this.weatherService.getUv(this.currentWeather.coord.lat, this.currentWeather.coord.lon)
       .subscribe(res => {
         this.uv = res as any[];
-      });
+      }, err => {
+      })
   }
 
   resultFound() {
     return Object.keys(this.currentWeather).length > 0;
-  }
-
-  ngOnInit(): void {
   }
 }
